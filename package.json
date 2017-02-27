@@ -1,0 +1,22 @@
+{
+  "name": "hack4u",
+  "version": "1.0.0",
+  "description": "Social engineering a spear fishing website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terrencezli/spear-fishing-website.git"
+  },
+  "author": "Terrence Li, Jonathan Molina, Nathan Sylvia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/terrencezli/spear-fishing-website/issues"
+  },
+  "homepage": "https://github.com/terrencezli/spear-fishing-website#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
