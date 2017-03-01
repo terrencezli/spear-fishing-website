@@ -47391,7 +47391,8 @@ define("es6", ["module"], function(a) {
       a.preventDefault(), this._leave()
     },
     _handleSubmit: function o(a) {
-      a.preventDefault(), window.location = "checkout.html"
+      a.preventDefault(),
+      a.target[0].value === "2qt2F7m3R4" ? window.location = "checkout.html" : this.applyPromoCode()
     },
     applyPromoCode: function p() {
       var a = this,
