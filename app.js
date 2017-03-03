@@ -13,15 +13,23 @@ var express = require("express"),
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: false
 }));
-app.use(express.static(publicDir, {
-  extensions: ['html']
-}));
-app.use(errorHandler({
-  dumpExceptions: true,
-  showStack: true
-}));
+
+var options = {
+  dotfiles: 'ignore',
+  etag: true,
+  extensions: ['htm', 'html'],
+  index: 'index.html',
+  lastModified: true,
+  maxAge: '1d',
+  setHeaders: function (res, path, stat) {
+    res.set('x-timestamp', Date.now());
+    res.header('Cache-Control', 'public, max-age=1d');
+  }
+};
+
+app.use(express.static(publicDir, options));
 
 var router = express.Router();
 
@@ -33,7 +41,9 @@ router.get("/checkout", function (req, res) {
   res.sendFile(path.join(publicDir, "/checkout.html"));
 });
 
-app.use('/WWCConnect2017', router);
+router.post("/checkout", function (req, res) {
+  res.sendFile(path.join(publicDir, "/checkout.html"));
+});
 
 console.log("Simple static server showing %s listening at http://%s:%s", publicDir, hostname, port);
 app.listen(port, hostname);

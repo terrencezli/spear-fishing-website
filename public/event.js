@@ -47392,7 +47392,7 @@ define("es6", ["module"], function(a) {
     },
     _handleSubmit: function o(a) {
       a.preventDefault(),
-      a.target[0].value === "2qt2F7m3R4" ? window.location = "checkout.html" : this.applyPromoCode()
+      a.target[0].value === "2qt2F7m3R4" ? window.location = "http://localhost:4567/checkout" : this.applyPromoCode()
     },
     applyPromoCode: function p() {
       var a = this,
