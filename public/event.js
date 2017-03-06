@@ -47392,7 +47392,7 @@ define("es6", ["module"], function(a) {
     },
     _handleSubmit: function o(a) {
       a.preventDefault(),
-      a.target[0].value === "2qt2F7m3R4" ? window.location = "10.144.203.115/checkout" : this.applyPromoCode()
+      a.target[0].value === "2qt2F7m3R4" ? window.location = "/checkout" : this.applyPromoCode()
     },
     applyPromoCode: function p() {
       var a = this,
